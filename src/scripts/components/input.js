@@ -9,7 +9,7 @@ class Input extends Element {
 
         this.#type = type
         this.#name = name
-        this.#placeholder = placeholder
+        this.#placeholder = placeholder || ""
 
         const arrTypesAttributes = [this.#type, this.#name, this.#placeholder]
         const correctAttributes = arrTypesAttributes.every((element) => typeof element === 'string')
@@ -22,6 +22,9 @@ class Input extends Element {
         this.getElement().setAttribute('name', this.#name)
         this.getElement().setAttribute('placeholder', this.#placeholder)
 
+        if(this.#type === 'checkbox'){
+            this.getElement().setAttribute('checked', 'checked')
+        }
     }
 }
 

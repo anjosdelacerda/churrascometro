@@ -1,14 +1,16 @@
 class Element {
     #element
-    constructor(tagName, props){
-        const {classList, inputList, buttonList, tagId} = props
+    constructor(tagName, props = {}){
+        const {classList, tagId} = props
         this.#element = document.createElement(tagName)
-        this.classList = classList
+        this.classList = Array.isArray(classList) ? classList : [];
 
         if (Array.isArray(this.classList)) {
-            this.classList?.forEach(styleClass => {
+           if(this.classList.length > 0){
+            this.classList.forEach(styleClass => {
                 this.#element.classList.add(styleClass);
             });
+           }
         }
 
         if(tagId){
@@ -28,6 +30,11 @@ class Element {
         this.#element.appendChild(childElement)
     }
 
+    setClassList(classList) {
+        this.classList = classList
+        this.#element.classList = this.classList
+    }
+
     appendText(text){
         if(typeof text !== 'string'){
             console.log('text needs to be a string')
@@ -38,7 +45,7 @@ class Element {
     }
 
     addClassesToChildren(children, tagChildren){
-        children.classList.add(`${this.classList[0]}__${tagChildren}`)
+        children.setClassList([...children.classList, `${this.classList[0]}__${tagChildren}`])
     }
 }
 

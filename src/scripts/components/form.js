@@ -9,24 +9,22 @@ class Form extends Element{
         this.divButtons = null
 
         if(title){
+            this.addClassesToChildren(title, 'title')
             this.appendChild(title.getElement())
         }
 
         if(Array.isArray(inputList)){
             inputList?.forEach((input) =>{
                 this.appendChild(input.getElement())
+                this.addClassesToChildren(input, 'group-input-label')
             })
         }
 
         if(buttonList){
             const newDiv = new Element('div')
-            if(classList){
-                if(Array.isArray(classList)){
-                    this.addClassesToChildren(newDiv.getElement(), 'div-butttons')
-                }
-            }
             this.divButtons = newDiv
             this.appendChild(this.divButtons.getElement())
+            this.addClassesToChildren(newDiv, 'div-butttons')
         }
 
         if(Array.isArray(buttonList)){
