@@ -4,10 +4,12 @@ class Button extends Element{
     constructor(props){
         super('button', props)
 
-        const {text} = props
+        const {text, type} = props
         
         this.text = text
         this.appendText(this.text)
+        this.type = type || ""
+        this.getElement().setAttribute('type', this.type)
     }
 }
 

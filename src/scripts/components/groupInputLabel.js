@@ -22,7 +22,7 @@ class GroupInputLabel extends Element {
     }
 
     createInput() {
-        const input = new Input(this.#type, this.#name, this.#placeholder);
+        const input = new Input(this.#type, this.#name, this.#placeholder, {classList:['input-values']});
         this.appendChild(input.getElement())
     }
     
