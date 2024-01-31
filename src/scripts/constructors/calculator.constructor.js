@@ -7,12 +7,12 @@ import Calculator from "../components/calculator.js"
 
 const constructorCalculator = () =>{
 
-    const subtractButtonMen = new Button({text: 'sub'})
-    const plusButtonMen = new Button({text: 'add'})
-    const subtractButtonWomen = new Button({text: 'sub'})
-    const plusButtonWomen = new Button({text: 'add'})
-    const subtractButtonKid = new Button({text: 'sub'})
-    const plusButtonKid = new Button({text: 'add'})
+    const subtractButtonMen = new Button({text: 'sub', classList: ['subtract-button']})
+    const plusButtonMen = new Button({text: 'add', classList: ['plus-button']})
+    const subtractButtonWomen = new Button({text: 'sub', classList: ['subtract-button']})
+    const plusButtonWomen = new Button({text: 'add', classList: ['plus-button']})
+    const subtractButtonKid = new Button({text: 'sub', classList: ['subtract-button']})
+    const plusButtonKid = new Button({text: 'add', classList: ['plus-button']})
     const calculatorButton = new Button({text: 'calcular'})
 
     const menInput = new Input('text', 'homens', '', {tagId: 'input-homens'})

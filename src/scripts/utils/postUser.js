@@ -1,16 +1,26 @@
+import setObjToLocalStorate from "./setObjToLocalStorage.js"
+import assembleCalculatorPage from "./assembleCalculatorPage.js"
+
 const postUser = (event) => {
     event.preventDefault()
     const elements = document.querySelectorAll('.input-values')
     const user = {}
-    for(let i = 0; i < elements.length; i++){
-        const element = elements[i]
+    elements.forEach((element) =>{
         const key = element.attributes.name.value
         const value = element.value
         if(element.attributes.checked){
             element.checked === true ? user[key] = true : user[key] = false
         }else{
             user[key] = value
-        }   
+        } 
+    })
+
+    console.log(user)
+
+    setObjToLocalStorate(user, 'user')
+    const userStorage = JSON.parse(localStorage.getItem('user'))
+    if(userStorage){
+        assembleCalculatorPage()
     }
 }
 
