@@ -6,8 +6,8 @@ import Title from "../components/title.js"
 const constructorForm = () =>{
     const inputName = new GroupInputLabel({type: "text", name: "nome", placeholder: "nome",})
     const inputEmail = new GroupInputLabel({type: "email", name: "e-mail", placeholder: "e-mail"})
-    const inputCEP = new GroupInputLabel({type: "text", name: "CEP", placeholder: "CEP"})
-    const inputChek = new GroupInputLabel({type: "checkbox", name: "email-marketing", placeholder: "aceito receber e-mails com promoções"})
+    const inputCEP = new GroupInputLabel({type: "text", name: "postalCode", placeholder: "CEP"})
+    const inputChek = new GroupInputLabel({type: "checkbox", name: "optIn", placeholder: "aceito receber e-mails com promoções"})
 
     const registerButton = new Button({text: 'Cadastre-se', type: 'submit'})
     const resetButton = new Button({text:'limpar', type: 'reset'})

@@ -3,7 +3,6 @@ import increasedValueMen from "./increasedValueMen.js"
 import increasedValueWoman from "./increasedValueWoman.js"
 
 const increasedValues = (idName) =>{
-    console.log(idName)
     switch(idName){
         case 'plus-homens':
             increasedValueMen()

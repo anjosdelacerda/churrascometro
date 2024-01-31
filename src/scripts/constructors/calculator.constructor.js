@@ -4,7 +4,6 @@ import Input from "../components/input.js"
 import Category from "../components/category.js"
 import Calculator from "../components/calculator.js"
 
-
 const constructorCalculator = () =>{
 
     const subtractButtonMen = new Button({text: 'sub', classList: ['subtract-button']})

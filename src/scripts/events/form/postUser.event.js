@@ -1,4 +1,3 @@
-// import postUser from "../../../utils/postUser.js";
 import postUser from "../../utils/postUser.js"
 
 const addEventPostUser = ()=>{

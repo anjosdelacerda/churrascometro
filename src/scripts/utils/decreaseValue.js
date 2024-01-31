@@ -3,7 +3,6 @@ import decreasedValueWoman from "./decreasedValueWoman.js"
 import decreasedValueKid from "./decreasedValueKid.js"
 
 const decreasedValues = (idName) =>{
-    console.log(idName)
     switch(idName){
         case 'subtract-homens':
             decreasedValueMen()

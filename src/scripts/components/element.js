@@ -1,9 +1,10 @@
 class Element {
     #element
     constructor(tagName, props = {}){
-        const {classList, tagId} = props
+        const {classList, tagId, innerHTML} = props
         this.#element = document.createElement(tagName)
         this.classList = Array.isArray(classList) ? classList : [];
+        this.innerHTML = innerHTML
 
         if (Array.isArray(this.classList)) {
            if(this.classList.length > 0){
@@ -42,6 +43,10 @@ class Element {
             const newText = document.createTextNode(text)
             this.#element.appendChild(newText)
         }
+    }
+
+    appendHTML(html){
+            this.#element.innerHTML = html
     }
 
     addClassesToChildren(children, tagChildren){

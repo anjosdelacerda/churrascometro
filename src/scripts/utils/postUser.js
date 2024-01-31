@@ -1,6 +1,6 @@
 import setObjToLocalStorate from "./setObjToLocalStorage.js"
 import assembleCalculatorPage from "./assembleCalculatorPage.js"
-
+import postUserData from "../API/postUser.api.js"
 const postUser = (event) => {
     event.preventDefault()
     const elements = document.querySelectorAll('.input-values')
@@ -14,12 +14,11 @@ const postUser = (event) => {
             user[key] = value
         } 
     })
-
-    console.log(user)
-
+    user.postalCode = user.postalCode.replace(/\D/g, '')
     setObjToLocalStorate(user, 'user')
     const userStorage = JSON.parse(localStorage.getItem('user'))
     if(userStorage){
+        postUserData()
         assembleCalculatorPage()
     }
 }

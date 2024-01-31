@@ -1,4 +1,5 @@
 import getCalculatorValues from "./getCalculatorValues.js"
+import constructorFoodList from "../constructors/list.constructor.js"
 
 const calculateQuantities = () =>{
     const quantities = getCalculatorValues()
@@ -24,8 +25,7 @@ const calculateQuantities = () =>{
         water: Math.ceil(quantityWhater / 1000),
         bear: Math.ceil(quantityBear)
     }
-    console.log(list)
-    return list
+    constructorFoodList(list)
 }
 
 export default calculateQuantities

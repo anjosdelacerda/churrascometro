@@ -17,11 +17,18 @@ const registerForm = constructorForm()
 const calculator = constructorCalculator()
 
 app.appendChild(title.getElement())
-// app.appendChild(registerForm)
-app.appendChild(calculator)
+app.appendChild(registerForm)
+// app.appendChild(calculator)
 root.appendChild(app.getElement())
 
-addEventPostUser()
-addEventPlusValues()
-addEventSubtractValues()
-addEventCalculateButton()
+
+if(app.getElement().querySelector('.register-form') !== null){
+    addEventPostUser()
+}
+
+if(app.getElement().querySelector('.calculator') !== null){
+    addEventPlusValues()
+    addEventSubtractValues()
+    addEventCalculateButton()
+}
+
