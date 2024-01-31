@@ -7,8 +7,7 @@ import constructorCalculator from "./constructors/calculator.constructor.js"
 import addEventPostUser from "./events/form/postUser.event.js"
 import addEventPlusValues from "./events/calculator/plusValue.event.js"
 import addEventSubtractValues from "./events/calculator/subtracrtValue.event.js"
-
-import getCalculatorValues from "./utils/getCalculatorValues.js"
+import addEventCalculateButton from "./events/calculator/calculateValues.event.js"
 
 const root = document.getElementById('root')
 const app = new App({tagId: 'app'})
@@ -25,4 +24,4 @@ root.appendChild(app.getElement())
 addEventPostUser()
 addEventPlusValues()
 addEventSubtractValues()
-getCalculatorValues()
+addEventCalculateButton()

@@ -13,7 +13,7 @@ const constructorCalculator = () =>{
     const plusButtonWomen = new Button({text: 'add', classList: ['plus-button']})
     const subtractButtonKid = new Button({text: 'sub', classList: ['subtract-button']})
     const plusButtonKid = new Button({text: 'add', classList: ['plus-button']})
-    const calculatorButton = new Button({text: 'calcular'})
+    const calculatorButton = new Button({text: 'calcular', tagId: 'calculator-button'})
 
     const menInput = new Input('text', 'homens', '', {tagId: 'input-homens'})
     const womenInput = new Input('text', 'mulheres', '', {tagId: 'input-mulheres'})
